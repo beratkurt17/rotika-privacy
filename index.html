@@ -1,4 +1,4 @@
-cat << 'EOF'
+cat << 'HTMLEOF'
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -6,58 +6,134 @@ cat << 'EOF'
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rotika – Gizlilik Politikası</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 800px; margin: 0 auto; padding: 24px 16px; color: #1a1a2e; line-height: 1.7; }
-    h1 { color: #4f46e5; border-bottom: 2px solid #e0e7ff; padding-bottom: 12px; }
-    h2 { color: #3730a3; margin-top: 32px; }
-    p, li { color: #374151; }
-    ul { padding-left: 20px; }
-    .updated { color: #6b7280; font-size: 0.9em; }
-    a { color: #4f46e5; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8faff; color: #1e293b; line-height: 1.75; }
+    .container { max-width: 760px; margin: 0 auto; padding: 40px 20px 80px; }
+    .logo { font-size: 1.6rem; font-weight: 800; color: #4f46e5; margin-bottom: 4px; }
+    .subtitle { font-size: 0.9rem; color: #64748b; margin-bottom: 32px; }
+    h1 { font-size: 1.8rem; font-weight: 700; color: #1e1b4b; margin-bottom: 8px; }
+    .updated { font-size: 0.85rem; color: #94a3b8; margin-bottom: 40px; }
+    h2 { font-size: 1.1rem; font-weight: 700; color: #4f46e5; margin: 36px 0 12px; padding-left: 12px; border-left: 3px solid #4f46e5; }
+    p { color: #374151; margin-bottom: 12px; }
+    ul { padding-left: 20px; margin-bottom: 12px; }
+    li { color: #374151; margin-bottom: 6px; }
+    .card { background: white; border-radius: 12px; padding: 20px 24px; margin-bottom: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .tag { display: inline-block; background: #eef2ff; color: #4f46e5; font-size: 0.78rem; font-weight: 600; border-radius: 6px; padding: 2px 8px; margin-right: 6px; margin-bottom: 4px; }
+    a { color: #4f46e5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { margin-top: 56px; text-align: center; font-size: 0.82rem; color: #94a3b8; }
   </style>
 </head>
 <body>
-  <h1>Rotika – Gizlilik Politikası</h1>
-  <p class="updated">Son güncelleme: 18 Mayıs 2026</p>
+<div class="container">
+  <div class="logo">Rotika</div>
+  <div class="subtitle">Eğitimde Yeni Nesil Odak Sistemi</div>
 
-  <p>Rotika uygulamasını kullanan bireyler olarak gizliliğinize saygı duyuyor ve kişisel verilerinizi korumayı taahhüt ediyoruz. Bu politika, uygulama aracılığıyla hangi verilerin toplandığını, nasıl kullanıldığını ve korunduğunu açıklar.</p>
+  <h1>Gizlilik Politikası</h1>
+  <div class="updated">Son güncelleme: 18 Mayıs 2026</div>
 
-  <h2>1. Toplanan Veriler</h2>
-  <ul>
-    <li><strong>Hesap bilgileri:</strong> E-posta adresi, görünen ad (Firebase Authentication aracılığıyla).</li>
-    <li><strong>Kullanım verileri:</strong> Ders takibi, görev tamamlama, sınav notları (yalnızca sizin görüntüleyebileceğiniz Firestore'da saklanır).</li>
-    <li><strong>Uygulama hata raporları:</strong> Kilitlenme bilgileri Firebase Crashlytics ile anonim olarak iletilir; kişisel veri içermez.</li>
-    <li><strong>Analitik veriler:</strong> Hangi ekranların kullanıldığına dair toplu istatistikler (Firebase Analytics); kişisel kimlik bilgisi içermez.</li>
-  </ul>
+  <div class="card">
+    <p>Rotika; öğrencilerin ders çalışma sürelerini, sınav sonuçlarını ve görevlerini takip etmesini, öğretmenlerin sınıf yönetimi yapmasını sağlayan bir eğitim uygulamasıdır. Bu politika, hangi verilerin toplandığını, neden toplandığını ve nasıl korunduğunu şeffaf biçimde açıklar.</p>
+  </div>
+
+  <h2>1. Toplanan Kişisel Veriler</h2>
+  <div class="card">
+    <p><strong>Hesap ve Kimlik Bilgileri</strong></p>
+    <ul>
+      <li>E-posta adresi (giriş için)</li>
+      <li>Görünen ad / kullanıcı adı</li>
+      <li>Kullanıcı rolü: Öğrenci veya Öğretmen</li>
+    </ul>
+    <br>
+    <p><strong>Öğrenci Tarafından Oluşturulan Akademik Veriler</strong></p>
+    <ul>
+      <li>Ders ve konu bazlı çalışma süreleri</li>
+      <li>Sınav türü (TYT / AYT), net sayıları ve tarihler</li>
+      <li>Tamamlanan ve bekleyen görevler</li>
+      <li>Hedef ve not kayıtları</li>
+      <li>Kazanılan XP puanı ve seviye bilgisi</li>
+      <li>Çalışma odası (Pomodoro) oturumları</li>
+    </ul>
+    <br>
+    <p><strong>Öğretmen Tarafından Oluşturulan Veriler</strong></p>
+    <ul>
+      <li>Sınıf adı ve sınıf kodu</li>
+      <li>Öğrencilere atanan görevler ve son tarihler</li>
+      <li>Öğrenci gelişim notları</li>
+    </ul>
+    <br>
+    <p><strong>Teknik ve Analitik Veriler</strong></p>
+    <ul>
+      <li>Uygulama kilitlenme raporları (Firebase Crashlytics – anonim)</li>
+      <li>Hangi ekranların kullanıldığına dair toplu istatistikler (Firebase Analytics – kişisel kimlik içermez)</li>
+    </ul>
+  </div>
 
   <h2>2. Verilerin Kullanım Amacı</h2>
-  <ul>
-    <li>Öğrenci-öğretmen eşleşmesi ve sınıf yönetimi</li>
-    <li>Kişiselleştirilmiş öğrenme ilerleme takibi</li>
-    <li>Uygulama stabilitesinin iyileştirilmesi</li>
-    <li>Bildirim ve hatırlatma gönderimi (yalnızca cihaz üzerinde)</li>
-  </ul>
+  <div class="card">
+    <ul>
+      <li>Öğrenci ve öğretmen hesaplarının oluşturulması ve yönetilmesi</li>
+      <li>Öğrencinin kendi çalışma istatistiklerini görmesi ve motivasyon sistemi (XP, seviye)</li>
+      <li>Öğretmenin sınıfındaki öğrencilerin gelişimini takip etmesi ve görev ataması</li>
+      <li>Sınava yönelik net analizi ve gelişim grafikleri</li>
+      <li>Bildirim ve hatırlatma gönderimleri (cihaz üzerinde yerel bildirim)</li>
+      <li>Uygulama hatalarının tespit edilerek iyileştirilmesi</li>
+    </ul>
+  </div>
 
-  <h2>3. Üçüncü Taraf Hizmetler</h2>
-  <p>Rotika aşağıdaki üçüncü taraf hizmetleri kullanır:</p>
-  <ul>
-    <li><a href="https://firebase.google.com/support/privacy" target="_blank">Google Firebase</a> – kimlik doğrulama, veri depolama, analitik, hata raporlama</li>
-    <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a> – uygulama içi satın alım yönetimi</li>
-  </ul>
+  <h2>3. Verilere Kimlerin Erişimi Var?</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Sadece siz:</strong> Kendi akademik verilerinize (çalışma süreleri, sınav notları, görevler) yalnızca siz ve bağlı olduğunuz öğretmen erişebilir.</li>
+      <li><strong>Öğretmeniniz:</strong> Aynı sınıfta olduğunuz öğretmen, size atadığı görevlerin durumunu ve paylaşılan gelişim verilerini görebilir.</li>
+      <li><strong>Rotika ekibi:</strong> Anonim hata ve kullanım istatistiklerine erişilebilir; bireysel kullanıcı verilerine erişilmez.</li>
+      <li><strong>Üçüncü taraflar:</strong> Kişisel veriler hiçbir üçüncü tarafa satılmaz veya kiralanmaz.</li>
+    </ul>
+  </div>
 
-  <h2>4. Veri Güvenliği</h2>
-  <p>Tüm veriler şifreli HTTPS bağlantısı üzerinden aktarılır. Firebase güvenlik kuralları ile her kullanıcı yalnızca kendi verilerine erişebilir. Üçüncü taraflara veri satışı yapılmamaktadır.</p>
+  <h2>4. Kullanılan Üçüncü Taraf Hizmetler</h2>
+  <div class="card">
+    <p><span class="tag">Firebase Auth</span> Kullanıcı girişi ve kimlik doğrulama</p>
+    <p><span class="tag">Cloud Firestore</span> Akademik verilerin bulut depolama</p>
+    <p><span class="tag">Firebase Crashlytics</span> Anonim kilitlenme raporları</p>
+    <p><span class="tag">Firebase Analytics</span> Toplu kullanım istatistikleri</p>
+    <p><span class="tag">RevenueCat</span> Uygulama içi Pro abonelik yönetimi</p>
+    <br>
+    <p>Bu hizmetlerin kendi gizlilik politikaları için:
+      <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase</a> &middot;
+      <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a>
+    </p>
+  </div>
 
-  <h2>5. Çocukların Gizliliği</h2>
-  <p>Rotika 13 yaş altı çocuklardan bilerek veri toplamaz. Eğer 13 yaşın altında bir çocuğa ait veri toplandığını fark ederseniz lütfen bizimle iletişime geçin.</p>
+  <h2>5. Veri Güvenliği</h2>
+  <div class="card">
+    <ul>
+      <li>Tüm veriler şifreli TLS/HTTPS bağlantısı üzerinden iletilir.</li>
+      <li>Firebase güvenlik kuralları ile her kullanıcı yalnızca kendi verisine yazabilir/okuyabilir.</li>
+      <li>Şifreler Rotika sunucularında saklanmaz; Firebase Authentication altyapısı tarafından yönetilir.</li>
+    </ul>
+  </div>
 
-  <h2>6. Veri Saklama ve Silme</h2>
-  <p>Hesabınızı silmek istediğinizde uygulama içindeki "Hesabı Sil" seçeneğini kullanabilir veya aşağıdaki e-posta adresinden talepte bulunabilirsiniz. Verileriniz 30 gün içinde kalıcı olarak silinir.</p>
+  <h2>6. Çocukların Gizliliği</h2>
+  <div class="card">
+    <p>Rotika lise öğrencilerini (genellikle 14–18 yaş) hedef almaktadır. 13 yaşın altındaki bireylerden bilerek kişisel veri toplanmaz. Böyle bir durum fark edilirse söz konusu veriler derhal silinir.</p>
+  </div>
 
-  <h2>7. İletişim</h2>
-  <p>Gizlilik ile ilgili sorularınız için: <a href="mailto:beratustenbakan@gmail.com">beratustenbakan@gmail.com</a></p>
+  <h2>7. Veri Saklama ve Hesap Silme</h2>
+  <div class="card">
+    <p>Hesabınızı silmek istediğinizde uygulamadaki <strong>Profil → Hesabı Sil</strong> seçeneğini kullanabilirsiniz. Silme talebinin ardından verileriniz 30 gün içinde kalıcı olarak kaldırılır. Alternatif olarak aşağıdaki e-posta adresinden yazılı talepte bulunabilirsiniz.</p>
+  </div>
 
-  <hr style="margin-top: 48px; border-color: #e0e7ff;" />
-  <p style="font-size: 0.85em; color: #9ca3af; text-align: center;">© 2026 Rotika. Tüm hakları saklıdır.</p>
+  <h2>8. İletişim</h2>
+  <div class="card">
+    <p>Gizlilik politikasıyla ilgili sorularınız için:<br>
+    <a href="mailto:beratustenbakan@gmail.com">beratustenbakan@gmail.com</a></p>
+  </div>
+
+  <footer>
+    <p>© 2026 Rotika · Tüm hakları saklıdır.</p>
+  </footer>
+</div>
 </body>
 </html>
-EOF
+HTMLEOF
